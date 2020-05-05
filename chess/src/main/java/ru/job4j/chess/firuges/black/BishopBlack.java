@@ -1,6 +1,5 @@
 package ru.job4j.chess.firuges.black;
 
-import ru.job4j.chess.Logic;
 import ru.job4j.chess.firuges.Cell;
 import ru.job4j.chess.firuges.Figure;
 
@@ -52,11 +51,3 @@ public class BishopBlack implements Figure {
     }
 
 }
-/*
-            a = source.x + index;
-            b = source.y + index;
-            c = source.x + index + 1;
-            d = source.y + index + 1;
-           // System.out.println(a);
-
- */
