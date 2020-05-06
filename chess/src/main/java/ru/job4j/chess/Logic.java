@@ -29,18 +29,18 @@ public class Logic {
             int index = this.findBy(source);
             if (index != -1) {
                 Cell[] steps = this.figures[index].way(source, dest);
-                for (int i = 0; i < steps.length; i++) {
-                        if (this.findBy(steps[i]) != -1 ) {
-                            rst = false;
-                            break;
-                        }
-                        if (steps.length > 0 && steps[steps.length - 1].equals(dest)) {
-                            rst = true;
-                            this.figures[i] = this.figures[i].copy(dest);
-                        }
-
+                for (Cell step : steps) {
+                     if (findBy(step) != -1) {
+                        rst = false;
+                        break;
+                    } else {
+                         rst = true;
+                     }
+                    }
+                if (steps.length > 0 &&steps[steps.length - 1].equals(dest) && rst) {
+                    this.figures[index] = this.figures[index].copy(dest);
                 }
-            }
+                }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -102,12 +102,4 @@ public boolean isWayFree(Cell[] cells) {
 
         return rst;
     }
-
-
-
-                 for (int i = 0; i < steps.length; i++) {
-                    if (this.findBy(steps[i]) != -1) {
-                        rst = false;
-                        break;
-                    }
  */
